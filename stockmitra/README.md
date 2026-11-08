@@ -32,7 +32,7 @@ suggested quantity = saved minimum stock − current on-hand quantity
 estimated order cost = suggested quantity × saved unit cost
 ```
 
-Suggestions are estimates for a person to review. This version does not place orders, change prices, or assume that the retailer should buy every suggested item. Vendor cards are shortcuts to supplier sites; a retailer may need a vendor account and a custom link may be required for the account-specific order screen. Purchase history is logged at the order level in this prototype; line-by-line receiving reconciliation is a later step.
+Suggestions are estimates for a person to review. This version does not place orders, change prices, or assume that the retailer should buy every suggested item. Vendor cards are shortcuts to supplier sites; a retailer may need a vendor account and a custom link may be required for the account-specific order screen. Purchase records can include catalog item lines. Marking a new order received adds its quantities to on-hand and updates unit cost using a weighted average. POS imports can optionally subtract matched quantities from on-hand after a confirmation prompt.
 
 ## The AI approach
 
@@ -62,7 +62,7 @@ The first customer group is convenience and liquor stores because they fit the o
 
 ## Run it
 
-Open `index.html` in a modern browser. The demo uses local storage for inventory, purchase-history, vendor, and imported sales data. Use the reset buttons to restore the sample catalog or purchase ledger. Sales imports do not silently change on-hand quantities.
+Open `index.html` in a modern browser. The demo uses local storage for inventory, purchase-history, vendor, and imported sales data. Use **Reset demo data** to restore the sample catalog and clear saved orders, sales imports, and custom vendors. Sales imports do not silently change on-hand quantities.
 
 ### CSV import columns
 
@@ -70,7 +70,7 @@ The importer requires one item-name column (`name`, `item`, `product`, or `produ
 
 ### POS sales CSV columns
 
-The sales importer requires an item identifier (`item`, `name`, `product`, `product name`, `SKU`, `UPC`, or `barcode`) and a quantity (`qty`, `quantity`, `units`, or `units sold`). Date and net sales/revenue columns are optional. Rows match on exact product name, internal StockMitra ID, or barcode; unmatched rows stay visible and are not discarded. The import is a sales summary, not an inventory adjustment.
+The sales importer requires an item identifier (`item`, `name`, `product`, `product name`, `SKU`, `UPC`, or `barcode`) and a quantity (`qty`, `quantity`, `units`, or `units sold`). Date and net sales/revenue columns are optional. Rows match on exact product name, internal StockMitra ID, or barcode; unmatched rows stay visible and are not discarded. The import can be a sales summary only, or the owner can explicitly apply matched quantities to current stock if the report covers sales after the latest physical count. An identical file is blocked from being imported twice. This is a browser demo, not an audit-grade transaction system.
 
 ## Design direction
 
