@@ -31,7 +31,7 @@ suggested quantity = saved minimum stock − current on-hand quantity
 estimated order cost = suggested quantity × saved unit cost
 ```
 
-Suggestions are estimates for a person to review. This version does not place orders, change prices, or assume that the retailer should buy every suggested item. Vendor cards are shortcuts to public supplier sites; a retailer may need a vendor account and the link may not land on their account-specific ordering screen.
+Suggestions are estimates for a person to review. This version does not place orders, change prices, or assume that the retailer should buy every suggested item. Vendor cards are shortcuts to supplier sites; a retailer may need a vendor account and a custom link may be required for the account-specific order screen. Purchase history is logged at the order level in this prototype; line-by-line receiving reconciliation is a later step.
 
 ## The AI approach
 
