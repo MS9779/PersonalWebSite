@@ -6,7 +6,7 @@ StockMitra is a practical, AI-assisted retail operations prototype inspired by a
 
 ## Try the demo
 
-Open the [StockMitra demo](https://ms9779.github.io/PersonalWebSite/stockmitra/) after its first successful deployment. The application source is in [`stockmitra/`](./stockmitra/).
+Open the [StockMitra demo](https://ms9779.github.io/PersonalWebSite/) after its first successful deployment. The application source is in [`stockmitra/`](./stockmitra/).
 
 ## What the prototype includes
 
