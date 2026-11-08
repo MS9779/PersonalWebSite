@@ -13,8 +13,8 @@ Open the [StockMitra demo](https://ms9779.github.io/PersonalWebSite/) after its 
 - Browser-based stock catalog with optional barcode and internal item reference.
 - CSV import and export.
 - Stock-at-cost, attention flags, and reorder estimates based on saved minimum quantities.
-- Vendor directory with external order-page shortcuts and a browser-local purchase ledger.
-- POS sales CSV import with catalog matching, units sold, net sales, and unmatched-row review.
+- Vendor directory with external order-page shortcuts and a browser-local purchase ledger with item-level receiving that updates stock.
+- POS sales CSV import with catalog matching, units sold, net sales, unmatched-row review, and optional on-hand adjustment after confirmation.
 - A guide that explains calculations from the current demo catalog.
 - Mobile-friendly, low-distraction interface.
 
@@ -32,4 +32,4 @@ GitHub Pages is configured to use GitHub Actions. The workflow publishes the `st
 
 ## Local use
 
-Open `stockmitra/index.html` in a modern browser. Reset demo data to restore the original catalog. The Vendors & Orders section contains a sample POS CSV to try the sales import. See [`stockmitra/README.md`](./stockmitra/README.md) for the business context, calculations, data fields, and product roadmap.
+Open `stockmitra/index.html` in a modern browser. Reset demo data to restore the sample catalog and clear local order, sales, and custom-vendor records. The Vendors & Orders section contains a sample POS CSV to try the sales import. See [`stockmitra/README.md`](./stockmitra/README.md) for the business context, calculations, data fields, and product roadmap.
