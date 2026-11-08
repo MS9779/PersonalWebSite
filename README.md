@@ -10,10 +10,10 @@ Open the [StockMitra demo](https://ms9779.github.io/PersonalWebSite/) after its 
 
 ## What the prototype includes
 
-- Browser-based stock catalog with optional barcode and internal item reference.
+- Browser-based stock catalog with optional barcode, internal item reference, and separate shelf/backroom counts.
 - CSV import and export.
 - Stock-at-cost, attention flags, and reorder estimates based on saved minimum quantities.
-- Vendor directory with external order-page shortcuts and a browser-local purchase ledger with item-level receiving that updates stock.
+- Vendor directory with external order-page shortcuts, a browser-local purchase ledger, item-level receiving, and separate shelf/backroom counts.
 - POS sales CSV import with catalog matching, units sold, net sales, unmatched-row review, and optional on-hand adjustment after confirmation.
 - A guide that explains calculations from the current demo catalog.
 - Mobile-friendly, low-distraction interface.
