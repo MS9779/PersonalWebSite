@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f5f4ef">
   <meta name="description" content="A practical inventory and buying assistant for independent retailers. Explore the StockMitra prototype with sample store data.">
-  <title>StockMitra — Retail, made clearer</title>
+  <title>StockMitra — Your retail sidekick</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@
       <header class="topbar"><button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button><div class="breadcrumb">Workspace <span>/</span> <b id="crumb">Overview</b></div><div class="top-actions"><span class="demo-pill"><i></i> SAMPLE DATA</span><button class="icon-button" id="helpTop" aria-label="Help">?</button><span class="top-avatar">M</span></div></header>
       <div class="page-wrap">
         <section class="page active" id="page-overview">
-          <div class="page-heading"><div><div class="eyebrow">MONDAY, 8:30 AM <span>·</span> YOUR STORE AT A GLANCE</div><h1>Good morning.<br><em>Here’s what needs you.</em></h1><p class="heading-copy">A clear view of your stock, cash, and next buying decisions.</p></div><div class="heading-actions"><button class="button button-outline" id="uploadCsv">↑ <span>Import stock</span></button><input type="file" id="csvFile" accept=".csv,text/csv" hidden><button class="button button-dark" id="addProduct">＋ <span>Add an item</span></button></div></div>
+          <div class="page-heading"><div><div class="eyebrow" id="todayLabel">YOUR STORE AT A GLANCE</div><h1><span id="greeting">Welcome.</span><br><em>Here’s what needs you.</em></h1><p class="heading-copy">A clear view of your stock, cash, and next buying decisions.</p></div><div class="heading-actions"><button class="button button-outline" id="uploadCsv">↑ <span>Import stock</span></button><input type="file" id="csvFile" accept=".csv,text/csv" hidden><button class="button button-dark" id="addProduct">＋ <span>Add an item</span></button></div></div>
           <div class="insight-banner"><div class="insight-orb">✳</div><div class="insight-copy"><span class="ai-label">SHELFWISE GUIDE <i>·</i> TODAY’S SIGNAL</span><p id="topInsight">Checking your store data…</p><small id="topInsightSub">A practical signal, with the numbers behind it.</small></div><button class="text-button" data-goto="guide">Ask a follow-up <span>↗</span></button></div>
           <div class="metric-grid">
             <article class="metric-card"><div class="metric-head"><span>Stock at cost</span><span class="metric-icon green">$</span></div><div class="metric-value" id="stockValue">$—</div><div class="metric-foot"><span class="metric-note">Estimated value of current stock</span></div><div class="sparkline spark-green"><i style="height:31%"></i><i style="height:45%"></i><i style="height:39%"></i><i style="height:56%"></i><i style="height:50%"></i><i style="height:69%"></i><i style="height:80%"></i><i style="height:73%"></i><i style="height:92%"></i></div></article>
