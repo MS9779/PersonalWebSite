@@ -6,17 +6,17 @@ StockMitra (“stock friend”) is an independent portfolio prototype for small 
 
 The idea came from a real operating problem noticed while working in a gas station: a store may be able to scan new deliveries, but scanning and cataloging every item already on the shelf is often impractical. That problem is the starting use case, not the product boundary. The longer-term audience is independent retail, including convenience stores and liquor stores, with room to adapt to other small shops.
 
-An inventory tool is useful only if it fits the way a store actually starts and runs. StockMitra lets a user begin with an item name, pack size, quantity, and optional cost. A barcode can be added later. The product then makes the recorded information easier to review and turns simple stock rules into understandable prompts.
+An inventory tool is useful only if it fits the way a store actually starts and runs. StockMitra lets a user begin with an item name, pack size, shelf count, backroom count, and optional cost. A barcode can be added later. The product then makes the recorded information easier to review and turns simple stock rules into understandable prompts.
 
 ## What a visitor can try
 
 - Review a sample store dashboard with stock value, items needing review, reorder estimates, and inventory-record completeness.
-- Browse and filter a product catalog, including manual items without a barcode.
+- Browse and filter a product catalog, including manual items without a barcode. Track shelf and backroom counts separately, then move units from backroom to shelf without changing total stock. Track shelf and backroom counts separately, then move units from the backroom to the shelf without changing total stock.
 - Add an item with a simple form. A barcode is optional; a reference code is generated automatically.
 - Import a CSV inventory file and export the current catalog or buying list.
 - Review replenishment suggestions based on the quantity on hand and saved minimum level.
 - Open sample vendor sites in a separate tab, then record a purchase order with date, amount, items, and confirmation number.
-- Review and export a browser-local purchase ledger; cycle sample order statuses from placed to confirmed to received.
+- Review and export a browser-local purchase ledger with item-level purchase lines. Mark deliveries received to add stock to the backroom and update average unit cost.
 - Import POS sales CSV rows, group matched items by catalog entry, and see units sold, net sales, and unmatched rows for cleanup.
 - Ask the built-in guide questions about reorder needs, recorded cash by category, or incomplete records.
 - Edit an item's on-hand count and reset the browser's sample data.
@@ -62,11 +62,11 @@ The first customer group is convenience and liquor stores because they fit the o
 
 ## Run it
 
-Open `index.html` in a modern browser. The demo uses local storage for inventory, purchase-history, vendor, and imported sales data. Use **Reset demo data** to restore the sample catalog and clear saved orders, sales imports, and custom vendors. Sales imports do not silently change on-hand quantities.
+Open `index.html` in a modern browser. The demo uses local storage for inventory, purchase-history, vendor, and imported sales data. Use **Reset demo data** to restore the sample catalog and clear saved orders, sales imports, and custom vendors. The app tracks shelf and backroom quantities separately. Receiving puts newly delivered cases into backroom stock. POS imports only change counts after the user confirms, and matched sales are taken from the shelf first, then backroom.
 
 ### CSV import columns
 
-The importer requires one item-name column (`name`, `item`, `product`, or `product name`). It also recognizes optional columns for category, pack/size, quantity/on hand, cost, selling price, minimum/reorder point, and barcode/UPC/SKU. Import only data you have permission to use.
+The importer requires one item-name column (`name`, `item`, `product`, or `product name`). It also recognizes optional columns for category, pack/size, total quantity, optional shelf quantity (`shelf_qty`) and backroom quantity (`backroom_qty`), cost, selling price, minimum/reorder point, and barcode/UPC/SKU. Import only data you have permission to use.
 
 ### POS sales CSV columns
 
