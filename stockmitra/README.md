@@ -15,6 +15,8 @@ An inventory tool is useful only if it fits the way a store actually starts and 
 - Add an item with a simple form. A barcode is optional; a reference code is generated automatically.
 - Import a CSV inventory file and export the current catalog or buying list.
 - Review replenishment suggestions based on the quantity on hand and saved minimum level.
+- Open sample vendor sites in a separate tab, then record a purchase order with date, amount, items, and confirmation number.
+- Review and export a browser-local purchase ledger; cycle sample order statuses from placed to confirmed to received.
 - Ask the built-in guide questions about reorder needs, recorded cash by category, or incomplete records.
 - Edit an item's on-hand count and reset the browser's sample data.
 
@@ -29,7 +31,7 @@ suggested quantity = saved minimum stock − current on-hand quantity
 estimated order cost = suggested quantity × saved unit cost
 ```
 
-Suggestions are estimates for a person to review. This version does not place orders, change prices, or assume that the retailer should buy every suggested item.
+Suggestions are estimates for a person to review. This version does not place orders, change prices, or assume that the retailer should buy every suggested item. Vendor cards are shortcuts to public supplier sites; a retailer may need a vendor account and the link may not land on their account-specific ordering screen.
 
 ## The AI approach
 
@@ -42,22 +44,24 @@ A production AI feature should be grounded in a retailer's own verified data, re
 1. **Validate the workflow:** observe several independent store owners doing an opening count and receiving a delivery; revise the form and item model around how they work.
 2. **Make store data durable:** add sign-in, a secure backend, store and staff roles, backups, and an audit trail before storing real business data.
 3. **Improve item onboarding:** support distributor invoices and spreadsheet templates, optional barcode lookup, case-to-unit conversion, and duplicate review. Keep manual entry available.
-4. **Connect real activity:** integrate a small number of commonly used POS and supplier systems, with explicit data quality and sync status.
-5. **Build useful forecasting:** use dated sales, inventory snapshots, supplier lead times, seasonality, and promotions. Show assumptions and confidence with each suggestion.
-6. **Test a paid offer:** interview target stores, run a small supported pilot, measure time saved and ordering decisions improved, then validate a subscription and optional setup service.
+4. **Connect purchase confirmations:** with clear consent, connect a business inbox or accept forwarded order emails, extract vendor, items, quantities, cost, and order status, then ask the owner to confirm uncertain matches. Keep an auditable source link to the original message.
+5. **Connect POS sales:** begin with CSV import or one supported POS integration. Reconcile sold units with received orders and counted on-hand stock; flag mismatches instead of silently changing counts.
+6. **Build useful forecasting:** use dated sales, inventory snapshots, supplier lead times, seasonality, and promotions. Show assumptions and confidence with each suggestion.
+7. **Test a paid offer:** interview target stores, run a small supported pilot, measure time saved and ordering decisions improved, then validate a subscription and optional setup service.
 
 The first customer group is convenience and liquor stores because they fit the observed inventory problem. The architecture and language should stay adaptable; the goal is not to hard-code the product to one store type.
 
 ## What this prototype does not do
 
-- It does not connect to a live POS, supplier, payments, or language model.
+- It does not connect to a live POS, supplier account, email inbox, payments, or language model.
+- The vendor page uses sample suppliers and example public links. Order records are entered manually and stored in this browser only. It cannot read purchase emails or securely log in to supplier portals.
 - It does not verify inventory counts, sales, costs, supplier availability, local regulations, or expected profit.
 - It does not place orders, make price changes, or replace age-verification or point-of-sale systems.
 - Sample records are invented for demonstration. Do not treat the sample numbers as a store forecast.
 
 ## Run it
 
-Open `index.html` in a modern browser. The demo uses local storage for edits. Use **Reset demo data** to restore the original sample catalog.
+Open `index.html` in a modern browser. The demo uses local storage for inventory and purchase-history edits. Use the reset buttons to restore the sample catalog or purchase ledger.
 
 ### CSV import columns
 
