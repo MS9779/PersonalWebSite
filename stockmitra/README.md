@@ -17,6 +17,7 @@ An inventory tool is useful only if it fits the way a store actually starts and 
 - Review replenishment suggestions based on the quantity on hand and saved minimum level.
 - Open sample vendor sites in a separate tab, then record a purchase order with date, amount, items, and confirmation number.
 - Review and export a browser-local purchase ledger; cycle sample order statuses from placed to confirmed to received.
+- Import POS sales CSV rows, group matched items by catalog entry, and see units sold, net sales, and unmatched rows for cleanup.
 - Ask the built-in guide questions about reorder needs, recorded cash by category, or incomplete records.
 - Edit an item's on-hand count and reset the browser's sample data.
 
@@ -53,7 +54,7 @@ The first customer group is convenience and liquor stores because they fit the o
 
 ## What this prototype does not do
 
-- It does not connect to a live POS, supplier account, email inbox, payments, or language model.
+- It does not connect to a live POS service, supplier account, email inbox, payments, or language model. POS CSV files are imported manually.
 - The vendor page uses sample suppliers and example public links. Order records are entered manually and stored in this browser only. It cannot read purchase emails or securely log in to supplier portals.
 - It does not verify inventory counts, sales, costs, supplier availability, local regulations, or expected profit.
 - It does not place orders, make price changes, or replace age-verification or point-of-sale systems.
@@ -61,11 +62,15 @@ The first customer group is convenience and liquor stores because they fit the o
 
 ## Run it
 
-Open `index.html` in a modern browser. The demo uses local storage for inventory and purchase-history edits. Use the reset buttons to restore the sample catalog or purchase ledger.
+Open `index.html` in a modern browser. The demo uses local storage for inventory, purchase-history, vendor, and imported sales data. Use the reset buttons to restore the sample catalog or purchase ledger. Sales imports do not silently change on-hand quantities.
 
 ### CSV import columns
 
 The importer requires one item-name column (`name`, `item`, `product`, or `product name`). It also recognizes optional columns for category, pack/size, quantity/on hand, cost, selling price, minimum/reorder point, and barcode/UPC/SKU. Import only data you have permission to use.
+
+### POS sales CSV columns
+
+The sales importer requires an item identifier (`item`, `name`, `product`, `product name`, `SKU`, `UPC`, or `barcode`) and a quantity (`qty`, `quantity`, `units`, or `units sold`). Date and net sales/revenue columns are optional. Rows match on exact product name, internal StockMitra ID, or barcode; unmatched rows stay visible and are not discarded. The import is a sales summary, not an inventory adjustment.
 
 ## Design direction
 
