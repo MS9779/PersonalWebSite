@@ -6,7 +6,7 @@ StockMitra is a practical, AI-assisted retail operations prototype inspired by a
 
 ## Try the demo
 
-Open the published app at the GitHub Pages URL after the first successful deployment. In this repository, the application source is in [`stockmitra/`](./stockmitra/).
+Open the [StockMitra demo](https://ms9779.github.io/PersonalWebSite/stockmitra/) after its first successful deployment. The application source is in [`stockmitra/`](./stockmitra/).
 
 ## What the prototype includes
 
@@ -26,7 +26,7 @@ This is a portfolio prototype, not a production inventory system. It uses invent
 
 ## Deployment
 
-The repository includes a GitHub Actions workflow that publishes the `stockmitra/` static app to GitHub Pages when the workflow is enabled. The first run may require the repository's Pages source to be set to **GitHub Actions** in Settings → Pages.
+GitHub Pages is configured to use GitHub Actions. The workflow publishes the `stockmitra/` app after relevant pushes to `main`.
 
 ## Local use
 
